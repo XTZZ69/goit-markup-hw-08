@@ -1,0 +1,99 @@
+.project-card {
+  @extend %list;
+
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  @media screen and (min-width: $tablet) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+
+.project-card__item {
+  transition: box-shadow $animation-duration $animation-function;
+
+  &:hover {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      1px 4px 6px rgba(0, 0, 0, 0.16);
+  }
+
+  &:hover .project-card__overlay,
+  &:focus .project-card__overlay {
+    transform: translateY(-100%);
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: 354px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 370px;
+  }
+}
+
+.project-card__link {
+  @extend %link;
+  max-width: 450px;
+
+  color: $main-color;
+}
+
+.project-card__thumb {
+  position: relative;
+
+  overflow: hidden;
+}
+
+.project-card__overlay {
+  position: absolute;
+  transform: translateY(0%);
+
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 63px 24px;
+
+  font-size: 18px;
+  line-height: 1.56;
+
+  color: $secondary-color;
+  background-color: rgba(33, 150, 243, 0.9);
+
+  transition: transform $animation-duration $animation-function;
+}
+
+.project-card__box {
+  padding: 20px 24px;
+
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+
+  @media screen and (min-width: $tablet) and (max-width: 1199px) {
+    &--bottom {
+      padding-bottom: 56px;
+    }
+  }
+}
+
+.project-card__title {
+  margin-top: 0;
+  margin-bottom: 4px;
+
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+}
+
+.project-card__text {
+  margin-top: 0;
+  margin-bottom: 0;
+
+  font-size: 16px;
+  line-height: 1.88;
+
+  color: $primary-color;
+}

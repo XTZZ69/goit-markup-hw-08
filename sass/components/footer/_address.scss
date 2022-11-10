@@ -1,0 +1,45 @@
+.address-box {
+  @media screen and (max-width: 1199px) {
+    margin-bottom: 60px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-right: 70px;
+  }
+}
+
+.address__list {
+  @extend %list;
+
+  font-style: normal;
+  line-height: 1.71;
+}
+
+.address__item {
+  &:not(:last-child) {
+    margin-bottom: 8px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    &:not(:last-child) {
+      margin-bottom: 9px;
+    }
+  }
+}
+
+.address__link {
+  @extend %link;
+
+  color: $secondary-color;
+
+  transition: color $animation-duration $animation-function;
+
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+
+  &--color {
+    color: rgba(255, 255, 255, 0.6);
+  }
+}

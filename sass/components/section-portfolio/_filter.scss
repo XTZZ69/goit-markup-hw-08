@@ -1,0 +1,51 @@
+.filter {
+  @extend %list;
+
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 8px;
+  row-gap: 15px;
+  margin-bottom: 40px;
+
+  @media screen and (min-width: $tablet) {
+    flex-wrap: nowrap;
+    justify-content: center;
+    margin-bottom: 30px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin-bottom: 50px;
+  }
+}
+
+.filter__btn {
+  padding: 6px 22px;
+
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  border: none;
+  border-radius: 4px;
+  background-color: $secondary-bgd-color;
+  color: $main-color;
+
+  cursor: pointer;
+
+  transition: background-color $animation-duration $animation-function,
+    color $animation-duration $animation-function,
+    box-shadow $animation-duration $animation-function;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-radius: 4px;
+    background-color: $accent-color;
+    color: $secondary-color;
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 2px 2px rgba(0, 0, 0, 0.12);
+  }
+}

@@ -1,0 +1,72 @@
+.menu-container {
+  & .menu-toggle {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+  }
+
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    width: 100%;
+  }
+
+  @media screen and (max-width: 767px) {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100vw;
+    height: 100vh;
+    padding: 48px 40px;
+
+    background-color: $main-bgd-color;
+    z-index: 999;
+
+    transform: translateX(100%);
+
+    transition: transform $animation-duration $animation-function;
+
+    &.is-open {
+      transform: translateX(0);
+    }
+  }
+}
+
+.menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-left: auto;
+  padding: 0;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  outline: none;
+
+  &:hover,
+  &:focus {
+    fill: $accent-color;
+  }
+
+  @media (min-width: $tablet) {
+    display: none;
+  }
+}
+
+.menu-container__box {
+  @media screen and (min-width: $tablet) {
+    display: flex;
+    width: 100%;
+    margin-left: auto;
+  }
+
+  @media screen and (min-width: $desktop) {
+    display: flex;
+    width: 100%;
+  }
+}

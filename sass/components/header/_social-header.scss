@@ -1,0 +1,31 @@
+.social-header {
+  @extend %list;
+
+  display: inline-flex;
+  gap: 10px;
+
+  @media screen and (min-width: $tablet) {
+    display: none;
+  }
+}
+
+.social-header__item {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.22;
+  letter-spacing: 0.02em;
+}
+
+.social-header__link {
+  @extend %link;
+
+  color: $accent-color;
+}
+
+.social-header__line {
+  margin-left: 10px;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+
+  transform: rotate(90deg);
+}

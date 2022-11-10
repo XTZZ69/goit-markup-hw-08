@@ -1,0 +1,29 @@
+.team-social {
+  @extend %list;
+
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.team-social__link {
+  @extend %link;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+
+  fill: $main-icon-color;
+
+  transition: fill $animation-duration $animation-function,
+    background-color $animation-duration $animation-function;
+
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+    fill: $secondary-color;
+  }
+}
